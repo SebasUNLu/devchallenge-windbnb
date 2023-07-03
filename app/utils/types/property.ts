@@ -1,17 +1,5 @@
-import { title } from "process";
-
-enum Apartment_Types {
-  PrivateRoom = "Private Room",
-  EntireHouse = "Entire House",
-  EntireApartment2Beds = "Entire Apartment, 2 beds",
-}
-
-enum FinlandLocations {
-  Helsinki = "Helsinki, Finland",
-  Turku = "Turku, Finland",
-  Oulu = "Oulu, Finland",
-  Vaasa = "Vaasa. Finland",
-}
+import { Apartment_Types } from "./apartment_types";
+import { FinlandLocations } from "./registered_locations";
 
 type Property = {
   image: string;
