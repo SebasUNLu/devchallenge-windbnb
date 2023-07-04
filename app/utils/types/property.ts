@@ -1,8 +1,9 @@
-import { Apartment_Types } from "./apartment_types";
+import { StaticImageData } from "next/image";
+import Apartment_Types from "./apartment_types";
 import { FinlandLocations } from "./registered_locations";
 
 type Property = {
-  image: string;
+  image: StaticImageData;
   title: string;
   apartmentType: Apartment_Types;
   stars: number;
@@ -10,17 +11,8 @@ type Property = {
   guests: {
     adults: number;
     childrens: number;
-  }
+  },
+  super_host: boolean
 }
 
-const apartment: Property = {
-  apartmentType: Apartment_Types.PrivateRoom,
-  title: "",
-  image: "",
-  stars: 1.2,
-  guests: {
-    adults: 2,
-    childrens: 0
-  },
-  location: FinlandLocations.Turku
-}
+export default Property
