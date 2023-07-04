@@ -5,10 +5,10 @@ export enum FinlandLocations {
   Vaasa = "Vaasa. Finland",
 }
 
-const keys = Object.keys(FinlandLocations) as Array<keyof typeof FinlandLocations>
+// const keys = Object.keys(FinlandLocations) as Array<keyof typeof FinlandLocations>
 
-console.log(keys)
+// console.log(keys)
 
-keys.map((key)=>{
-  console.log(FinlandLocations[key])
-})
+// keys.map((key)=>{
+//   console.log(FinlandLocations[key])
+// })

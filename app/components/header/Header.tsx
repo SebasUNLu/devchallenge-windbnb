@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-white w-full h-20 fixed z-30 top-0 flex justify-around items-center">
+      <div className="bg-white w-full h-20 z-30 top-0 flex justify-around items-center">
         <div className={`text-[#EB5757] `}>Windbnb</div>
         <div className="h-14 w-[18.75em] shadow-md flex rounded-2xl border-[#F2F2F2] border">
           <button className="w-[45%] flex items-center justify-center">
