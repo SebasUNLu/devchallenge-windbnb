@@ -4,7 +4,7 @@ import PropertyPage from './components/properties_list/PropertyPage'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col items-center p-3">
       <Header />
       <PropertyPage />
     </main>

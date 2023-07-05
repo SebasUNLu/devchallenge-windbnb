@@ -12,18 +12,24 @@ export interface Filters {
 
 interface ContextProps {
   properties: Property[];
+  currentLocation: string;
+  currentGuests: number;
   applyFilter: (filters: Filters) => void;
   resetFilter: () => void;
 }
 
 const MyContext = createContext<ContextProps>({
   properties: [],
+  currentGuests: 0,
+  currentLocation: "",
   applyFilter: () => {},
   resetFilter: () => {},
 });
 
 const ContextProvider = ({ children }: PropsWithChildren<{}>) => {
   const [properties, setProperties] = useState<Property[]>(MOCK_VALUES);
+  const [currentLocation, setCurrentLocation] = useState("");
+  const [currentGuests, setCurrentGuests] = useState(0);
 
   const applyFilters = (filters: Filters) => {
     let propToFilter = MOCK_VALUES.filter(({ location, guests }) => {
@@ -32,16 +38,24 @@ const ContextProvider = ({ children }: PropsWithChildren<{}>) => {
       if (filters.adults > adults || filters.children > childrens) return false;
       return true;
     });
-    setProperties(propToFilter)
+    setProperties(propToFilter);
   };
 
   const resetFilter = () => {
-    setProperties(MOCK_VALUES)
-  }
+    setProperties(MOCK_VALUES);
+    setCurrentGuests(0);
+    setCurrentLocation("");
+  };
 
   return (
     <MyContext.Provider
-      value={{ properties: properties, applyFilter: applyFilters, resetFilter: resetFilter }}
+      value={{
+        properties: properties,
+        currentGuests: currentGuests,
+        currentLocation: currentLocation,
+        applyFilter: applyFilters,
+        resetFilter: resetFilter,
+      }}
     >
       {children}
     </MyContext.Provider>
