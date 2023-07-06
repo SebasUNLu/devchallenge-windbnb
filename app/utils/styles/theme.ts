@@ -1,14 +1,14 @@
 export default {
   colors: {
-    // orange
+    // pure orange
     primary: '#EB5757',
     // buttons
     primary90: '#EB5757E5',
     // stars
     primary72: '#EB5757B8',
     placeholders: '#BDBDBD',
-    black: '#333333',
+    black_primary: '#333333',
     // super host y locations
-    superHost: '#4F4F4F',
+    black_secondary: '#4F4F4F',
   },
 }

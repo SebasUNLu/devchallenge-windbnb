@@ -136,10 +136,11 @@ const Header = () => {
         <div>
           {/* Locations list */}
           <div className="w-full fex flex-col">
-            {finlandLocationsKeys.map((loc) => (
+            {finlandLocationsKeys.map((loc, index) => (
               <LocationFilterCard
                 locationName={FinlandLocations[loc]}
                 applyLocationFilter={setLocation}
+                key={`Location_${index}`}
               />
             ))}
           </div>

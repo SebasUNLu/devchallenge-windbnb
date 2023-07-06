@@ -29,7 +29,9 @@ const PropertyPage = () => {
     <div className="w-full">
       <div className="my-4 font-bold text-lg w-full flex justify-between">
         <h1>Stays in Finland</h1>
-        <p className="font-medium text-sm text-[#4F4F4F] self-center">{properties.length} stays</p>
+        <p className="font-medium text-sm text-[#4F4F4F] self-center">
+          {properties.length} stays
+        </p>
       </div>
       <div className="w-full flex flex-wrap justify-around gap-x-8">
         {!properties.length ? (
@@ -57,6 +59,7 @@ const PropertyPage = () => {
                   stars={stars}
                   super_host={super_host}
                   title={title}
+                  key={`property_card_${index}`}
                 />
               );
             }
