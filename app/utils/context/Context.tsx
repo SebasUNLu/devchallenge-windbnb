@@ -5,7 +5,7 @@ import Property from "../types/property";
 import MOCK_VALUES from "../mock/Values";
 
 export interface Filters {
-  location?: string;
+  location: string;
   adults: number;
   children: number;
 }
@@ -35,7 +35,11 @@ const ContextProvider = ({ children }: PropsWithChildren<{}>) => {
     let propToFilter = MOCK_VALUES.filter(({ location, guests }) => {
       const { adults, childrens } = guests;
       if (filters.location && filters.location !== location) return false;
-      if (filters.adults > adults || filters.children > childrens) return false;
+      if (
+        (filters.adults && filters.adults > adults) ||
+        (filters.children && filters.children > childrens)
+      )
+        return false;
       return true;
     });
     setProperties(propToFilter);
