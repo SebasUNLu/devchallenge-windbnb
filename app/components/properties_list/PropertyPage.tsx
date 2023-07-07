@@ -80,9 +80,9 @@ const PropertyCard = ({
   title,
 }: Property) => {
   return (
-    <div className="w-full my-4 max-w-sm cursor-pointer transition-all duration-200 rounded-3xl">
+    <div className="w-full my-4 max-w-sm cursor-pointer transition-all duration-200 rounded-3xl hover:scale-105">
       <Image src={image} alt={`property_image`} className="rounded-3xl" />
-      <div className="w-full flex justify-between items-center my-4">
+      <div className="w-full flex justify-between items-center my-2">
         {super_host && (
           <p className="text-[10px] font-bold text-[#4F4F4F] border border-[#4F4F4F] rounded-2xl px-2 py-1 leading-3">
             Super Host

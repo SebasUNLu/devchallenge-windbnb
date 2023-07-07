@@ -72,7 +72,7 @@ const FilterMenu = ({ menuOpen, closeMenu, openMenu }: FilterMenuProps) => {
       <div
         className={`fixed ${
           menuOpen ? "top-0" : "top-full"
-        } left-0 w-full bg-white h-[90%] z-20 transition-all duration-300 p-3`}
+        } left-0 w-full bg-white h-[90%] z-20 transition-all duration-300 p-3 sm:px-20 sm:h-[70%]`}
       >
         {/* title y close button */}
         <div className="w-full flex justify-between mb-3">
@@ -86,10 +86,10 @@ const FilterMenu = ({ menuOpen, closeMenu, openMenu }: FilterMenuProps) => {
 
         {/* Filter options */}
         <div
-          className={`w-full border border-solid rounded-2xl border-[#F2F2F2] shadow-md`}
+          className={`w-full border border-solid rounded-2xl border-[#F2F2F2] shadow-md sm:flex`}
         >
           {/* Location Filter */}
-          <div className="flex flex-col px-6 py-3 relative">
+          <div className="flex flex-col px-6 py-3 relative sm:w-full">
             <div
               className={`text-[${theme.colors.black_primary}] text-[9px] font-bold`}
             >
@@ -111,9 +111,9 @@ const FilterMenu = ({ menuOpen, closeMenu, openMenu }: FilterMenuProps) => {
               />
             )}
           </div>
-          <div className="w-full border-b border-[#F2F2F2] border-solid"></div>
+          <div className="w-full border-b border-[#F2F2F2] border-solid sm:w-0 sm:border-l sm:border-b-0 "></div>
           {/* Guests filter */}
-          <div className="flex flex-col px-6 py-3">
+          <div className="flex flex-col px-6 py-3 sm:w-full">
             <div
               className={`text-[${theme.colors.black_primary}] text-[9px] font-bold`}
             >
@@ -129,12 +129,25 @@ const FilterMenu = ({ menuOpen, closeMenu, openMenu }: FilterMenuProps) => {
               {totalGuests ? `${totalGuests} guests` : "Add guests"}
             </p>
           </div>
+          
+          {/* desktop search button */}
+          <button
+            onClick={handleSearch}
+            className={`px-6 py-4 rounded-2xl bg-[#EB5757] items-center hidden sm:flex`}
+          >
+            <div className="w-4 h-4">
+              <FaMagnifyingGlass className="w-full h-full" color="white" />
+            </div>
+            <p className="font-bold text-sm leading-4 text-white ml-3">
+              Search
+            </p>
+          </button>
         </div>
 
         {/* filters */}
-        <div>
+        <div className="flex flex-col sm:flex-row">
           {/* Locations list */}
-          <div className="w-full fex flex-col">
+          <div className="w-full fex flex-col ">
             {finlandLocationsKeys.map((loc, index) => (
               <LocationFilterCard
                 locationName={FinlandLocations[loc]}
@@ -144,11 +157,11 @@ const FilterMenu = ({ menuOpen, closeMenu, openMenu }: FilterMenuProps) => {
             ))}
           </div>
           {/* Guests filter */}
-          <div className="flex justify-evenly">
+          <div className="flex justify-evenly w-full sm:flex-col">
             {/* adults */}
             <div className="">
               <p className="font-bold text-sm leading-4">Adults:</p>
-              <p className="font-normal text-sm leading-4">Ages 13 or above</p>
+              <p className="font-normal text-sm leading-4 text-[#BDBDBD]">Ages 13 or above</p>
               <div className="mt-4">
                 <button
                   onClick={decreaseAdults}
@@ -168,7 +181,7 @@ const FilterMenu = ({ menuOpen, closeMenu, openMenu }: FilterMenuProps) => {
             {/* children */}
             <div className="">
               <p className="font-bold text-sm leading-4">Children:</p>
-              <p className="font-normal text-sm leading-4">Age 2 - 12:</p>
+              <p className="font-normal text-sm leading-4 text-[#BDBDBD]">Age 2 - 12:</p>
               <div className="mt-4">
                 <button
                   onClick={decreaseChildren}
@@ -186,10 +199,10 @@ const FilterMenu = ({ menuOpen, closeMenu, openMenu }: FilterMenuProps) => {
               </div>
             </div>
           </div>
-          {/* search button */}
+          {/* mobile search button */}
           <button
             onClick={handleSearch}
-            className={`absolute inset-x-0 max-w-max mx-auto bottom-6 flex px-6 py-4 rounded-2xl bg-[#EB5757]`}
+            className={`absolute inset-x-0 max-w-max mx-auto bottom-6 flex px-6 py-4 rounded-2xl bg-[#EB5757] sm:hidden`}
           >
             <div className="w-4 h-4">
               <FaMagnifyingGlass className="w-full h-full" color="white" />
@@ -223,7 +236,7 @@ const LocationFilterCard = ({
 }: LocationCardProps) => {
   return (
     <div
-      className="w-full flex my-7 ml-6 cursor-pointer"
+      className="w-full flex my-7 mx-6 cursor-pointer"
       onClick={() => applyLocationFilter(locationName)}
     >
       <div className="w-6 h-6">
