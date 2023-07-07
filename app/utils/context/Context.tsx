@@ -32,6 +32,8 @@ const ContextProvider = ({ children }: PropsWithChildren<{}>) => {
   const [currentGuests, setCurrentGuests] = useState(0);
 
   const applyFilters = (filters: Filters) => {
+    setCurrentLocation(filters.location);
+    setCurrentGuests(filters.children + filters.adults);
     let propToFilter = MOCK_VALUES.filter(({ location, guests }) => {
       const { adults, childrens } = guests;
       if (filters.location && filters.location !== location) return false;

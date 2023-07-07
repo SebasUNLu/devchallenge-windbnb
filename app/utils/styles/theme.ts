@@ -10,5 +10,6 @@ export default {
     black_primary: '#333333',
     // super host y locations
     black_secondary: '#4F4F4F',
+    black_third: '#828282',
   },
 }
