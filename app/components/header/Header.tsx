@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-white w-full z-10 top-0 flex flex-col justify-around items-center sm:flex-row">
+      <div className="bg-white w-full z-10 top-0 flex flex-col justify-around items-center sm:flex-row p-3 sm:p-5">
         {/* Title */}
         <div className={`text-[#EB5757] w-full mt-[10px] mb-[22px]`}>
           <div className="flex justify-start h-5">

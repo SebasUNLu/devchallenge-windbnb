@@ -26,7 +26,7 @@ const PropertyPage = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full p-3 sm:p-5">
       <div className="my-4 font-bold text-lg w-full flex justify-between">
         <h1>Stays in Finland</h1>
         <p className="font-medium text-sm text-[#4F4F4F] self-center">
